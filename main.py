@@ -5,8 +5,7 @@ calculation = ""
 def add_to_calculation(symbol):
     global calculation
     calculation += str(symbol)
-    text_results.delete(1.0, tk.END)
-    text_results.insert(1.0, calculation)
+    text_results.insert(tk.END, symbol)
 
 def evaluate_calculation():
     global calculation
@@ -23,10 +22,11 @@ def clear_field():
     global calculation
     calculation = ""
     text_results.delete(1.0, tk.END)
+    text_results.insert(1.0, "0")  # Add this line
 
 root = tk.Tk()
 root.title("Calculator")
-root.geometry("290x265")
+root.geometry("290x270")
 root.resizable(0, 0)
 
 # Create a frame for the text field
@@ -36,6 +36,7 @@ text_frame.pack(pady=10)
 # Create the text field
 text_results = tk.Text(text_frame, height=2, width=16, font=('Arial', 24))
 text_results.pack()
+#text_results.insert(1.0, "0")  # Add this line
 
 # Create a frame for the buttons
 button_frame = tk.Frame(root)
