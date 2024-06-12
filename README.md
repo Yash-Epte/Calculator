@@ -59,6 +59,6 @@ The main code for the calculator is contained in `calculator.py`. Here's a brief
 
 ## Contact
 
-For any questions or suggestions, please open an issue in this repository or contact me at [your-email@example.com](epteyash777@gmail.com).
+For any questions or suggestions, please open an issue in this repository 
 
 
