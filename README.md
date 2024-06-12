@@ -55,18 +55,10 @@ The main code for the calculator is contained in `calculator.py`. Here's a brief
 - Buttons for digits (0-9), operations (`+`, `-`, `*`, `/`), and special characters (`(`, `)`).
 - Clear (`C`), backspace (`←`), and equals (`=`) buttons for additional functionality.
 
-## Contributing
 
-Feel free to fork this repository and submit pull requests. Any contributions, whether they're bug fixes, new features, or documentation improvements, are welcome!
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-For any questions or suggestions, please open an issue in this repository or contact me at [your-email@example.com](mailto:your-email@example.com).
+For any questions or suggestions, please open an issue in this repository or contact me at [your-email@example.com](epteyash777@gmail.com).
 
----
 
-Replace the placeholder email and GitHub repository URL with your actual details.
