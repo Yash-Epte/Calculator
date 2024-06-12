@@ -4,8 +4,14 @@ calculation = ""
 
 def add_to_calculation(symbol):
     global calculation
-    calculation += str(symbol)
-    text_results.insert(tk.END, symbol)
+    if symbol == "←":
+        # Handle backspace case
+        calculation = calculation[:-1]  # Remove the last character from the calculation string
+        text_results.delete(1.0, tk.END)  # Clear the text field
+        text_results.insert(1.0, calculation)  # Insert the updated calculation string
+    else:
+        calculation += str(symbol)
+        text_results.insert(tk.END, symbol)
 
 def evaluate_calculation():
     global calculation
@@ -36,7 +42,6 @@ text_frame.pack(pady=10)
 # Create the text field
 text_results = tk.Text(text_frame, height=2, width=16, font=('Arial', 24))
 text_results.pack()
-
 
 # Create a frame for the buttons
 button_frame = tk.Frame(root)
@@ -95,11 +100,14 @@ btn_div = tk.Button(button_frame, text="/", command=lambda: add_to_calculation("
 btn_div.grid(row=5, column=3)
 
 # Clear and Equal buttons
-btn_clear = tk.Button(button_frame, text="C", command=lambda: clear_field(), width=14, font=('Arial', 14), bg="red", fg="white")
+btn_clear = tk.Button(button_frame, text="C", command=lambda: clear_field(), width=13, font=('Arial', 14), bg="red", fg="white")
 btn_clear.grid(row=6, column=0, columnspan=2)
 
-btn_equal = tk.Button(button_frame, text="=", command=lambda: evaluate_calculation(), width=14, font=('Arial', 14), bg="green", fg="white")
-btn_equal.grid(row=6, column=2, columnspan=2)
+btn_sclear = tk.Button(button_frame, text="←", command=lambda: add_to_calculation("←"), width=13, font=('Arial', 14), bg="orange", fg="white")
+btn_sclear.grid(row=6, column=2, columnspan=2)
+
+btn_equal = tk.Button(button_frame, text="=", command=lambda: evaluate_calculation(), width=30, font=('Arial', 14), bg="green", fg="white")
+btn_equal.grid(row=7, column=0, columnspan=5)
 
 # Keep the window open
 root.mainloop()
